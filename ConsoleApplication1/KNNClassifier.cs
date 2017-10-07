@@ -99,6 +99,17 @@ namespace ConsoleApplication1
             testdata.Rows.Add("This is real", "No");
             testdata.Rows.Add("a9", "Yes");
             testdata.Rows.Add("b15", "Yes");
+            testdata.Rows.Add("b15", "Yes");
+            testdata.Rows.Add("b18", "Yes");
+            testdata.Rows.Add("b200", "Yes");
+            testdata.Rows.Add("b17", "Yes");
+            testdata.Rows.Add("b62", "Yes");
+            testdata.Rows.Add("v90", "Yes");
+            testdata.Rows.Add("b123", "Yes");
+            testdata.Rows.Add("This is Ok", "Yes");
+            testdata.Rows.Add("b1", "Yes");
+            testdata.Rows.Add("b64", "Yes");
+            testdata.Rows.Add("b100000000000", "Yes");
 
             testForInstance(knn, "b15", "Yes");
 
