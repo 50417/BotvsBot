@@ -5,3 +5,5 @@ Initial Proof of Concept using ML tool and Program Knowledge to predict if the o
 - Clone the repository
 - Import to Visual Studio
 - Run via Visual Studio
+
+Make Sure the excel Property "Copy to Output Directory" is set to Always Copy in Vs
