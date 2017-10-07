@@ -13,5 +13,6 @@ namespace ConsoleApplication1
             else
                 return "b" + (-p);
         }
+
     }
 }

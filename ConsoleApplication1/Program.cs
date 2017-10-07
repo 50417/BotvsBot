@@ -13,9 +13,18 @@ namespace ConsoleApplication1
             Class1 Test = new Class1();
             //Test.foo();
             MachineLearningNaive hello = new MachineLearningNaive();
-            hello.runNaive();
+            //hello.runNaive();
             TestProgram program = new TestProgram();
-            String yes = program.foo(122);
+            //String yes = program.foo(122);
+            //int yess = program.fooint(200);
+            Console.WriteLine("Before Program Analysis");
+            KNNClassifier knnclassifier = new KNNClassifier(1);
+            knnclassifier.runKNN();
+
+            Console.WriteLine("\nAfter Program Analysis");
+            KNNClassifier knnclassifierWithDscData = new KNNClassifier(2);
+            knnclassifierWithDscData.runKNN();
+            Console.ReadLine();
         }
     }
 }
