@@ -4,6 +4,7 @@ Initial Proof of Concept using ML tool and Program Knowledge to predict if the o
 
 - Clone the repository
 - Import to Visual Studio
+- Install Via NuGet Packages :(v3.7.0) Accord , Accord.MachineLearning, Accord.Math, Accord.IO, Accord.Statistics,Accord,Controls
 - Run via Visual Studio
 
 Make Sure the excel Property "Copy to Output Directory" is set to Always Copy in Vs
