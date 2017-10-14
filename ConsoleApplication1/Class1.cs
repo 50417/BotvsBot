@@ -17,7 +17,7 @@ namespace ConsoleApplication1
     {
         public void foo()
         {
-            String path = Environment.CurrentDirectory +"\\examples.xls";
+            String path = Environment.CurrentDirectory +"\\example.xlsx";
 
             // Read the Excel worksheet into a DataTable
             DataTable table = new ExcelReader(path).GetWorksheet("T1");

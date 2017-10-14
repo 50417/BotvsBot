@@ -28,7 +28,8 @@ namespace ConsoleApplication1
 
         public DataTable prepareTrainingDataset(int i)
         {
-            var path = Directory.GetCurrentDirectory() + "\\examples.xls";
+            var path = Directory.GetCurrentDirectory() + "\\example.xlsx";
+            Console.WriteLine(path);
             // Read the Excel worksheet into a DataTable
             if (i == 1)
                 return new ExcelReader(path).GetWorksheet("T1");
