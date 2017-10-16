@@ -29,7 +29,7 @@ namespace ConsoleApplication1
         public DataTable prepareTrainingDataset(int i)
         {
             var path = Directory.GetCurrentDirectory() + "\\example.xlsx";
-            Console.WriteLine(path);
+    
             // Read the Excel worksheet into a DataTable
             if (i == 1)
                 return new ExcelReader(path).GetWorksheet("T1");
@@ -64,8 +64,7 @@ namespace ConsoleApplication1
             // Now let us convert the numeric output to an actual "Yes" or "No" answer
             string result = codebook.Revert("GeneratedByProgram", c); // answer will be "No"
 
-
-            Console.WriteLine("Test Data Input :  " + input + "\nExcept" + Output + "\nResult: " + result);
+            Console.WriteLine("Test Data Input :  " + input + "\nExpectation: " + Output + "\nResult: " + result);
 
         }
 
@@ -94,8 +93,6 @@ namespace ConsoleApplication1
             testdata.Columns.Add("Output", "GeneratedByProgram");
 
             testdata.Rows.Add("a8", "Yes");
-
-            testdata.Rows.Add("a8", "Yes");
             testdata.Rows.Add("b5", "Yes");
             testdata.Rows.Add("This is real", "No");
             testdata.Rows.Add("a9", "Yes");
@@ -105,9 +102,13 @@ namespace ConsoleApplication1
             testdata.Rows.Add("b200", "Yes");
             testdata.Rows.Add("b17", "Yes");
             testdata.Rows.Add("b62", "Yes");
-            testdata.Rows.Add("v90", "Yes");
+            testdata.Rows.Add("b90", "Yes");
             testdata.Rows.Add("b123", "Yes");
             testdata.Rows.Add("This is Ok", "Yes");
+            testdata.Rows.Add("b1", "Yes");
+            testdata.Rows.Add("b64", "Yes");
+            testdata.Rows.Add("I am god", "No");
+            testdata.Rows.Add("b14", "Yes");
             testdata.Rows.Add("b1", "Yes");
             testdata.Rows.Add("b64", "Yes");
             testdata.Rows.Add("b100000000000", "Yes");
@@ -120,7 +121,7 @@ namespace ConsoleApplication1
             int[] answers = knn.Decide(testInput); // answer should be 1.
 
 
-            Console.WriteLine("Accuracy: " + calculateAccuracy(answers, testOutput));
+            Console.WriteLine("\n Accuracy (Tested on 20 data set): " + calculateAccuracy(answers, testOutput));
            
 
         }
