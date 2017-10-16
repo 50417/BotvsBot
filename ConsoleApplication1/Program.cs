@@ -12,17 +12,23 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             TestProgram program = new TestProgram();
- 
-             Console.WriteLine("Before Program Analysis");
-            KNNClassifier knnclassifier = new KNNClassifier(1);
-             knnclassifier.runKNN();
 
-            Console.WriteLine("\nAfter Program Analysis");
-            KNNClassifier knnclassifierWithDscData = new KNNClassifier(2);
-            knnclassifierWithDscData.runKNN();
+            // Console.WriteLine("Before Program Analysis");
+            //KNNClassifier knnclassifier = new KNNClassifier(1);
+            // knnclassifier.runKNN();
 
-            NaiveBayesClassifer nb = new NaiveBayesClassifer();
-            nb.ClassifyText();
+            //Console.WriteLine("\nAfter Program Analysis");
+            //KNNClassifier knnclassifierWithDscData = new KNNClassifier(2);
+            //knnclassifierWithDscData.runKNN();
+
+            NaiveBayesProtoType nbP = new NaiveBayesProtoType(1);
+            nbP.runNaiveBayes();
+            NaiveBayesProtoType nbAP = new NaiveBayesProtoType(0);
+            nbAP.runNaiveBayes();
+
+
+            //NaiveBayesClassifer nb = new NaiveBayesClassifer();
+            // nb.ClassifyText();
             Console.ReadLine();
         }
     }

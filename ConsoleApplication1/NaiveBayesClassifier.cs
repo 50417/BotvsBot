@@ -47,25 +47,22 @@ namespace ConsoleApplication1
         public void ClassifyText()
         {
             readFile();
-            // Read Text
-            string[] programGeneratedTokens = sbGeneratedByProgram.ToString().Tokenize();
-            string[] Tokens = sbNotGeneratedByProgram.ToString().Tokenize();
-            // Their respective classes
-            string[] classes = { "Program Generated", "Not Program Generated" };
+         
+            string[] words = {  sbGeneratedByProgram.ToString() , sbNotGeneratedByProgram.ToString() };
 
-
+            string[][] word = words.Tokenize();
             // Create a new Bag-of-Words for the texts
             var bow = new BagOfWords()
             {
                 MaximumOccurance = 1 // the resulting vector will have only 0's and 1's
             };
-            bow.Learn(programGeneratedTokens);
-            bow.Learn(Tokens);
+            bow.Learn(word);
+            //bow.Learn(Tokens);
 
             // Create input and outputs for training
-            double[] inputP = bow.Transform(programGeneratedTokens);
-            double[] inputNP = bow.Transform(Tokens);
-
+            double[] inputP = bow.Transform(word[0]);
+            double[] inputNP = bow.Transform(word[1]);
+        
             int[][] inputs = {
                 inputP.ToInt32(),
                 inputNP.ToInt32()
@@ -83,10 +80,10 @@ namespace ConsoleApplication1
 
             var nb = learner.Learn(inputs, outputs);
 
-            string[] text = "".Tokenize();
+            string[] text = "Yup! Two years without a car! Downtown living is morning too I got that this morning too too If the wi. Here's hoping!".Tokenize();
             int[] input = bow.Transform(text).ToInt32();
             int answer = nb.Decide(input);
-
+            Console.WriteLine(answer);
             Console.WriteLine(nb.Probabilities(input)[0] + " " + nb.Probabilities(input)[1]);
             // Learn a Naive Bayes model from the examples
             //{

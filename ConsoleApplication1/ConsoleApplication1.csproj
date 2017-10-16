@@ -84,6 +84,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="NaiveBayesClassifier.cs" />
+    <Compile Include="NaiveBayesProtoType.cs" />
+    <Compile Include="MotivatingExampleProgram.cs" />
     <Compile Include="ProgramUnderTest.cs" />
     <Compile Include="KNNClassifier.cs" />
     <Compile Include="Program.cs" />
@@ -92,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DataSet.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="example.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
