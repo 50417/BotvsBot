@@ -68,7 +68,7 @@ namespace ConsoleApplication1
             catch(Exception e)
             {
               
-                Console.WriteLine("Test Data Input :  " + testInstance[0] + "," + testInstance[1] + "\nExpectation: " + Output + "\nResult: " + "Not Present in Dictionary");
+                Console.WriteLine("Test Data Input :  " + testInstance[0] + "," + testInstance[1] + "\nExpectation: " + Output + "\nResult: " + "No");
 
             }
 
@@ -122,8 +122,8 @@ namespace ConsoleApplication1
             testdata.Rows.Add("I ", "am god", "No");
             testdata.Rows.Add("b", "33", "Yes");
 
-            //String[] inst={ "b","15"};
-            //testForInstance(nb, inst, "Yes");
+            String[] inst={ "b","15"};
+            testForInstance(nb, inst, "Yes");
 
             DataTable testsymbols = codebook.Apply(testdata);
             int[][] testInput = testsymbols.ToJagged<int>("Feature1","Feature2");
